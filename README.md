@@ -18,7 +18,7 @@ An assistive wearable that translates Bangladeshi Sign Language (BdSL) into text
 
 ## Overview
 
-Communication is a fundamental right, yet many in the deaf and hard-of-hearing community in Bangladesh face significant barriers. This project is a **low-cost, sensor-based wearable** designed to bridge that gap.
+Communication is a fundamental right, yet many in the deaf community in Bangladesh face significant barriers. This project is a **low-cost, sensor-based wearable** designed to bridge that gap.
 
 Unlike existing systems that rely on computer vision (which requires a camera and good lighting), this glove uses **integrated sensors** to track hand orientation and finger flex, making it:
 
@@ -44,31 +44,37 @@ Designed in KiCad with multi-layer board and antenna keep-out zone
 
 **Schematic:**
 
-<img src="Images/schematic.png" alt="Schematic" width="800"/>
+<img src="Images/Glove_Schemetic.png" alt="Schematic" width="800"/>
 
 **PCB Layout:**
 
-<img src="Images/pcb_layout.png" alt="PCB Layout" width="800"/>
+<img src="Images/Glove_PCB.png" alt="PCB Layout" width="800"/>
 
 **PCB 3D View:**
 
-<img src="Images/pcb_3d.png" alt="PCB 3D" width="800"/>
+<img src="Images/3D View.png" alt="PCB 3D" width="800"/>
 
 ### Wrist Hub Enclosure
 
 Designed in Fusion 360 for maximum portability
 
-**Top Case:**
+**Box Case:**
 
-<img src="Images/case_top.png" alt="Case Top" width="800"/>
+<img src="Images/Box case.png" alt="Case Top" width="800"/>
 
-**Bottom Case:**
+## Assembly:
 
-<img src="Images/case_bottom.png" alt="Case Bottom" width="800"/>
+**Sensors assembly:**
 
-**Assembly:**
+<img src="Images/Box Assembly 1.png" alt="Assembly" width="800"/>
 
-<img src="Images/assembly.png" alt="Assembly" width="800"/>
+<img src="Images/Box Assembly 2.png" alt="Assembly" width="800"/>
+
+<img src="Images/Box Assembly 3.png" alt="Assembly" width="800"/>
+
+**Wiring Diagram:**
+
+<img src="Images/Wiring Diagram.png" alt="Assembly" width="800"/>
 
 ### Hardware Wiring
 
@@ -101,13 +107,6 @@ The flex sensors are wired in a pull-down configuration to ensure stable ADC rea
 ---> 3D Model Assembly and Wire Routing
 ---> Voltage Divider Circuit Design
 ---> Component Selection and BOM
-
-**🔄 In Progress:**
-
-- Physical Prototype Assembly
-- Sensor Calibration and Data Collection
-- Machine Learning Model Training for BdSL gestures
-- Firmware Optimization for Real-Time Inference
 
 ## Roadmap
 
@@ -145,3 +144,4 @@ This project uses:
 **Built with ❤️ to empower the deaf community in Bangladesh**
 
 > GitHub [@Adnanosman](https://github.com/Adnanosman9)
+
