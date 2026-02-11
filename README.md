@@ -125,12 +125,6 @@ We want to collaborate to make it better by working with practical data and deaf
 - Optimize for ESP32-C6 inference
 - Achieve >90% accuracy on test set
 
-### Phase 4: Integration & Testing
-
-- Integrate ML model with firmware
-- Implement text-to-speech output
-- User testing with deaf community members
-
 ## Credits
 
 This project uses:
@@ -144,5 +138,6 @@ This project uses:
 **Built with ❤️ to empower the deaf community in Bangladesh**
 
 > GitHub [@Adnanosman](https://github.com/Adnanosman9)
+
 
 
