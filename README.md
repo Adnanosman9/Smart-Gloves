@@ -90,14 +90,14 @@ The flex sensors are wired in a pull-down configuration to ensure stable ADC rea
 
 | Component       | Specification          | Qty | Link      |
 | --------------- | ---------------------- | --- | --------- |
-| Microcontroller | ESP32-C6-Mini          | 1   | [shop](#) |
-| Flex Sensors    | Resistive Flex Sensors | 5   | [shop](#) |
-| IMU             | MPU-6050 (6-axis)      | 1   | [shop](#) |
-| Battery         | 3.7V Li-Po Battery     | 1   | [shop](#) |
-| Charger         | TP4056 Charging Module | 1   | [shop](#) |
-| Resistors       | 10kΩ Resistors         | 5   | [shop](#) |
+| Microcontroller | ESP32-C6-Mini          | 2   | [shop](https://store.roboticsbd.com/internet-of-things-iot/3855-esp32-c6-supermini-development-board-wifi-6-bluetooth-5-le-risc-v-32-bit-robotics-bangladesh.html) |
+| Flex Sensors    | Resistive Flex Sensors | 10  | [shop](https://store.roboticsbd.com/flex-force-load/3645-flex-sensor-45-china-robotics-bangladesh.html) |
+| IMU             | MPU-6050 (6-axis)      | 2   | [shop](https://store.roboticsbd.com/robotics-parts/104-6dof-accelerometer-gyroscope-gy-521-mpu-6050-robotics-bangladesh.html) |
+| Battery         | 3.7V Li-Po Battery     | 2   | [shop](https://store.roboticsbd.com/battery/1260-lipo-battery-4500mah-111v-3s-robotics-bangladesh.html) |
+| Resistors       | 10kΩ Resistors         | 10  | [shop](https://store.roboticsbd.com/resistor/243-10k-ohm-14w-carbon-film-resistor-pack-of-10-robotics-bangladesh.html) |
+| Capacitor       | 0.1uf Capacitor        | 4   | [shop](https://store.roboticsbd.com/capacitor/2280-01uf-50v-capacitor-robotics-bangladesh.html) |
 
-### Full BOM with detailed specifications coming soon.
+### Approximate cost : 250 usd
 
 ## Current Status
 
@@ -144,4 +144,5 @@ This project uses:
 **Built with ❤️ to empower the deaf community in Bangladesh**
 
 > GitHub [@Adnanosman](https://github.com/Adnanosman9)
+
 
