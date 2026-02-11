@@ -4,13 +4,12 @@
 </h1>
 
 <h4 align="center">
-An assistive wearable that translates Bangladeshi Sign Language (BdSL) into text and speech in real-time
+An wearable smarrt glove that translates Bangladeshi Sign Language (BdSL) into speech in real-time
 </h4>
 
 <div align="center">
 
 ![ESP32](https://img.shields.io/badge/ESP32--C6-000000?style=for-the-badge&logo=espressif&logoColor=white)
-![Arduino](https://img.shields.io/badge/Arduino-00979D?style=for-the-badge&logo=arduino&logoColor=white)
 ![KiCad](https://img.shields.io/badge/KiCad-314CB0?style=for-the-badge&logo=kicad&logoColor=white)
 ![Fusion 360](https://img.shields.io/badge/Fusion%20360-FF6B00?style=for-the-badge&logo=autodesk&logoColor=white)
 
@@ -38,7 +37,7 @@ Communication is a fundamental right, yet many in the deaf community in Banglade
 Unlike existing systems that rely on computer vision, this glove uses **integrated sensors** to track hand movements and finger bendings, making it:
 
 -  **Portable** – No external cameras needed
--  **Environment-Independent** – Works in any lighting condition
+-  **Environment Independent** – Works in any lighting condition
 -  **Culturally Relevant** – Built specifically for Bangladeshi Sign Language
 
 ## Key Features
@@ -119,13 +118,6 @@ The flex sensors are wired in a pull-down configuration to ensure stable ADC rea
 
 ### Approximate cost : 250 usd
 
-## Current Status
-
-**✅ Completed:**
----> Complete KiCad Schematic (0 Errors / 0 Warnings)
----> 3D Model Assembly and Wire Routing
----> Voltage Divider Circuit Design
----> Component Selection and BOM
 
 ## Roadmap
 
@@ -150,6 +142,7 @@ This project uses:
 
 ---
 
-**Built with ❤️ to empower the deaf community in Bangladesh**
+**Built to empower the deaf community in Bangladesh**
 
 > GitHub [@Adnanosman](https://github.com/Adnanosman9)
+
