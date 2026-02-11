@@ -32,7 +32,7 @@ An wearable smarrt glove that translates Bangladeshi Sign Language (BdSL) into s
 
 ## Overview
 
-Communication is a fundamental right, yet many in the deaf community in Bangladesh face significant barriers. This project is a **low-cost, sensor-based wearable** designed to bridge that gap.
+Communication is a fundamental right, yet many in the deaf community in Bangladesh face significant barriers. This project is a **sensor based wearable glove** to bridge that gap.
 
 Unlike existing systems that rely on computer vision, this glove uses **integrated sensors** to track hand movements and finger bendings, making it:
 
@@ -148,5 +148,6 @@ This project uses:
 **Built to empower the deaf community in Bangladesh**
 
 > GitHub [@Adnanosman](https://github.com/Adnanosman9)
+
 
 
