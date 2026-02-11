@@ -133,6 +133,9 @@ We want to collaborate to make it better by working with practical data and deaf
 - Optimize for ESP32-C6 inference
 - Achieve >90% accuracy on test set
 
+
+## > Currentlly we are working on the coding part
+
 ## Credits
 
 This project uses:
@@ -145,4 +148,5 @@ This project uses:
 **Built to empower the deaf community in Bangladesh**
 
 > GitHub [@Adnanosman](https://github.com/Adnanosman9)
+
 
