@@ -136,6 +136,8 @@ We want to collaborate to make it better by working with practical data and deaf
 
 ## > Currentlly we are working on the coding part || **Coding Partner** [Kishor](https://github.com/kishor1594)
 
+### Hackclub Project and journals [HackClub](https://blueprint.hackclub.com/projects/11759)
+
 ## Credits
 
 This project uses:
@@ -148,6 +150,7 @@ This project uses:
 **Built to empower the deaf community in Bangladesh**
 
 > GitHub [@Adnanosman](https://github.com/Adnanosman9)
+
 
 
 
