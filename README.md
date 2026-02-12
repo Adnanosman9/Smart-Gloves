@@ -134,7 +134,7 @@ We want to collaborate to make it better by working with practical data and deaf
 - Achieve >90% accuracy on test set
 
 
-## > Currentlly we are working on the coding part
+## > Currentlly we are working on the coding part || **Coding Partner** [Kishor](https://github.com/kishor1594)
 
 ## Credits
 
@@ -148,6 +148,7 @@ This project uses:
 **Built to empower the deaf community in Bangladesh**
 
 > GitHub [@Adnanosman](https://github.com/Adnanosman9)
+
 
 
 
