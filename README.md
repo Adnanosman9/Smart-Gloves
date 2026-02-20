@@ -108,7 +108,7 @@ The flex sensors are wired in a pull-down configuration to ensure stable ADC rea
 | Male Header Pins | 10 | 1x02 Pin | [Shop Link](https://store.roboticsbd.com/connector/653-male-pin-header-single-row-l-shaped-robotics-bangladesh.html) | 18 |
 | Flex Sensors | 10 | 4.5 inch | [Shop Link](https://www.electronics.com.bd/sensors/flex-sensor-4-5?srsltid=AfmBOorxq734_F29vBK2kye2oFEvBfQKv7jxRflG7IaUrFKZaXeHipuE) | 2062x10 = 20620 |
 | Custom PCB | 2 | 2 layer | [JLCPCB](https://jlcpcb.com/) | - |
-| LiPo Battery | 2 | 3.7V (~1000mAh) | [Shop Link](https://www.electronics.com.bd/lipo-battery/li-ion-battery-1200mah-3-7v-1-cell) | 540x2 = 1080 |
+| LiPo Battery | 2 | 3.7V (~1200mAh) | [Shop Link](https://www.electronics.com.bd/lipo-battery/li-ion-battery-1200mah-3-7v-1-cell) | 455x2 = 910 |
 | Glove Material | 2 | Breathable Fabric | - | - |
 | **Total Estimation** | | | | **~205 USD (includes PCB, Enclosure & other expected cost)** |
 
@@ -146,6 +146,7 @@ This project uses:
 **Built to empower the deaf community in Bangladesh**
 
 > GitHub [@Adnanosman](https://github.com/Adnanosman9)
+
 
 
 
