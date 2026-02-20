@@ -112,7 +112,7 @@ The flex sensors are wired in a pull-down configuration to ensure stable ADC rea
 | Glove Material | 2 | Breathable Fabric | - | - |
 | **Total Estimation** | | | | **~205 USD (includes PCB, Enclosure & other expected cost)** |
 
-### Approximate cost : 205 usd
+### Approximate cost : 205 usd (Costs may vary by the time)
 
 
 ## Roadmap
@@ -146,6 +146,7 @@ This project uses:
 **Built to empower the deaf community in Bangladesh**
 
 > GitHub [@Adnanosman](https://github.com/Adnanosman9)
+
 
 
 
