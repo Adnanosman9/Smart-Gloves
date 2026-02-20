@@ -21,9 +21,9 @@ Communication is a fundamental right, yet many in the deaf community in Banglade
 
 Unlike existing systems that rely on computer vision, this glove uses **integrated sensors** to track hand movements and finger bendings, making it:
 
--  **Portable** – No external cameras needed
--  **Environment Independent** – Works in any lighting condition
--  **Culturally Relevant** – Built specifically for Bangladeshi Sign Language
+-  No external cameras needed
+-  Works in any lighting condition
+-  Built specifically for Bangladeshi Sign Language
 
 ## Key Features
 
@@ -141,6 +141,7 @@ This project uses:
 **Built to empower the deaf community in Bangladesh**
 
 > GitHub [@Adnanosman](https://github.com/Adnanosman9)
+
 
 
 
