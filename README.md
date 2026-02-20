@@ -32,6 +32,12 @@ Unlike existing systems that rely on computer vision, this glove uses **integrat
 - **Custom Dataset** - We are willing to make our specific dataset for BdSL
 - **Wireless Ready** - Wi-Fi 6, Bluetooth 5
 
+## How to Use This Project
+
+1. Print the 3D enclosure and assemble the custom PCB.
+2. Use the `firmware.cpp` to the ESP32-C6 to begin collecting sensor data.
+3. The flex sensors and IMU will give the hand gesture output as in csv format with finger bendings and hand poisitioning. 
+
 ## Design
 
 Designed in KiCad and Fusion 360 for PCB and Enclosure
@@ -135,6 +141,7 @@ This project uses:
 **Built to empower the deaf community in Bangladesh**
 
 > GitHub [@Adnanosman](https://github.com/Adnanosman9)
+
 
 
 
