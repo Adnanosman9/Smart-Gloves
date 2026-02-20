@@ -15,21 +15,6 @@ An wearable smarrt glove that translates Bangladeshi Sign Language (BdSL) into s
 
 </div>
 
-## Project Vision
-<div align="center">
-  <img src="Visualization poster.png" alt="BdSL Glove Poster">
-  <br>
-  
-  <div style="background-color: #1a1a1a; padding: 10px; border-radius: 10px; display: inline-block;">
-    <a href="https://git.io/typing-svg">
-      <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&duration=2500&pause=1000&color=32CD32&center=true&vCenter=true&width=800&lines=Illustrating+Wearable+Features+%26+Goals;Designed+to+Empower+the+Deaf+Community" alt="Typing SVG" />
-    </a>
-    <br>
-    <img src="https://img.shields.io/badge/Rendered%20By-Nano%20Banana%20Pro-FFD700?style=for-the-badge&logo=visual-studio-code&logoColor=black" alt="Nano Banana Pro Badge">
-  </div>
-</div>
----
-
 ## Overview
 
 Communication is a fundamental right, yet many in the deaf community in Bangladesh face significant barriers. This project is a **sensor based wearable glove** to bridge that gap.
@@ -150,6 +135,7 @@ This project uses:
 **Built to empower the deaf community in Bangladesh**
 
 > GitHub [@Adnanosman](https://github.com/Adnanosman9)
+
 
 
 
