@@ -106,7 +106,7 @@ The flex sensors are wired in a pull-down configuration to ensure stable ADC rea
 | Resistor | 4 | 4.7kΩ | [Shop Link](https://robodocbd.com/product/4.7k-ohm-1-4w-resistor?srsltid=AfmBOooYe4Ffau6c5tj1ZHqSFBkdW1RNqfQV6cVdxJ_YH-f_rlnICQig) | 10 |
 | Capacitor | 4 | 0.1uF | [Shop Link](https://store.roboticsbd.com/capacitor/2280-01uf-50v-capacitor-robotics-bangladesh.html) | 12 |
 | Male Header Pins | 10 | 1x02 Pin | [Shop Link](https://store.roboticsbd.com/connector/653-male-pin-header-single-row-l-shaped-robotics-bangladesh.html) | 18 |
-| Flex Sensors | 10 | 4.5 inch | [Shop Link](https://store.roboticsbd.com/flex-force-load/3645-flex-sensor-45-china-robotics-bangladesh.html) | 1625x10 = 16250 |
+| Flex Sensors | 10 | 4.5 inch | [Shop Link](https://www.electronics.com.bd/sensors/flex-sensor-4-5?srsltid=AfmBOorxq734_F29vBK2kye2oFEvBfQKv7jxRflG7IaUrFKZaXeHipuE) | 2062x10 = 20620 |
 | Custom PCB | 2 | 2 layer | [JLCPCB](https://jlcpcb.com/) | - |
 | LiPo Battery | 2 | 3.7V (~1000mAh) | [Shop Link](https://store.roboticsbd.com/quadcopter/2861-37v-1000mah-25c-lipo-battery-robotics-bangladesh.html) | 540x2 = 1080 |
 | Glove Material | 2 | Breathable Fabric | - | - |
@@ -146,6 +146,7 @@ This project uses:
 **Built to empower the deaf community in Bangladesh**
 
 > GitHub [@Adnanosman](https://github.com/Adnanosman9)
+
 
 
 
