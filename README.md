@@ -96,6 +96,14 @@ The flex sensors are wired in a pull-down configuration to ensure stable ADC rea
 - 🟢 **Green Wire**: Signal from Sensor to ESP32 ADC pin
 - ⚫ **Black Wire**: path to Ground (GND)
 
+## 🧤 Hardware Mounting & Assembly
+
+>**Sewn Sensor Sleeves**: The flex sensors slide into custom-sewn fabric channels on the back of each finger. This lets the sensors move and slide naturally when you make a fist, taking the physical stress off the delicate traces so they don't break.
+
+>**3D-Printed Wrist Hub**: The main brain (ESP32 and IMU) lives inside a low-profile, custom 3D-printed case.
+
+>**Velcro Straps**: Instead of permanently gluing the case to the fabric, the Wrist Hub uses built-in strap loops and an adjustable Velcro band. This keeps the IMU firmly anchored to your wrist for accurate tracking, but makes it super easy to pop the electronics off when you need to wash the glove!
+
 ## Bill of Materials
 
 | Component / Part | Qty | Value / Specs | Link | Cost (BDT) |
@@ -146,6 +154,7 @@ This project uses:
 **Built to empower the deaf community in Bangladesh**
 
 > GitHub [@Adnanosman](https://github.com/Adnanosman9)
+
 
 
 
