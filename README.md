@@ -142,6 +142,11 @@ We want to collaborate to make it better by working with practical data and deaf
 
 ### Hackclub Project and journals [HackClub](https://blueprint.hackclub.com/projects/11759)
 
+## **Proper firmware updated (13th march, 2026)**
+
+## ⚠ Caution
+ 
+> The firmware has not been physically tested yet. There may be issues like I2C pin mismatches (SDA/SCL), wrong GPIO assignments, or sensor initialization errors that only show up on real hardware. Double-check all pin numbers against the schematic before flashing, and expect some debugging on first boot.
 ## Credits
 
 This project uses:
@@ -154,6 +159,7 @@ This project uses:
 **Built to empower the deaf community in Bangladesh**
 
 > GitHub [@Adnanosman](https://github.com/Adnanosman9)
+
 
 
 
