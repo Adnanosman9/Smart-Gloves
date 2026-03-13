@@ -18,7 +18,7 @@
 
 #define serviceId  "4fafc201-1fb5-459e-8fcc-c5c9c331914c"
 #define charId     "beb5483e-36e1-4688-b7f5-ea07361b26a9"
-#define gloveName  "SIGNLINK-R"
+#define gloveName  "SIGNO-R"
 
 const int openVals[5]   = {400, 400, 400, 400, 400};
 const int closedVals[5] = {900, 900, 900, 900, 900};
