@@ -30,9 +30,9 @@ Board: **ESP32C6 Dev Module** | Upload speed: **921600**
 
 ---
 
-## Step 1 — Calibrate
+## Step 1 - Calibrate
 
-Do this before anything else, and do it per-glove — the flex values are different for each hand.
+Do this before anything else, and do it per-glove - the flex values are different for each hand.
 
 Flash `calibration/calibration.ino`, open Serial Monitor at `115200 baud`, then:
 
@@ -47,16 +47,16 @@ const int openVals[5]   = { /* your values */ };
 const int closedVals[5] = { /* your values */ };
 ```
 
-If the values look the same for open and closed, something's wrong with the wiring — check the voltage divider first.
+If the values look the same for open and closed, something's wrong with the wiring - check the voltage divider first.
 
 ---
 
-## Step 2 — Flash
+## Step 2 - Flash
 
 | File | Glove | BLE name |
 |------|-------|----------|
-| `glove_left.ino` | Left hand | `SIGNLINK-L` |
-| `glove_right.ino` | Right hand | `SIGNLINK-R` |
+| `glove_left.ino` | Left hand | `SIGNO-L` |
+| `glove_right.ino` | Right hand | `SIGNO-R` |
 
 Flash both over USB before disconnecting.
 
@@ -64,7 +64,7 @@ Flash both over USB before disconnecting.
 
 ## Step 3 — Connect the app
 
-Open the SIGNO app and tap Connect. It scans for `SIGNLINK-L` and `SIGNLINK-R` automatically. If it doesn't find one of them, try restarting that ESP32 — BLE advertising sometimes doesn't start cleanly on first boot.
+Open the SIGNO app and tap Connect. It scans for `SIGNO-L` and `SIGNO-R` automatically. If it doesn't find one of them, try restarting that ESP32 — BLE advertising sometimes doesn't start cleanly on first boot.
 
 ---
 
@@ -100,8 +100,4 @@ Each glove sends JSON at 20Hz:
 
 Voltage divider per finger:
 
-```
-3.3V → flex sensor → GPIO pin → 10kΩ → GND
-```
 
-GPIO 0 on ESP32-C6 is also used for boot mode — if the board is acting weird on startup, that's probably why. Swap thumb to a different pin if it becomes an issue.
