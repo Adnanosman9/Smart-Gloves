@@ -28,7 +28,7 @@ Libraries (install from Arduino Library Manager):
 
 ---
 
-## Before you start — calibration
+## Before you start - calibration
 
 Open both `.ino` files and paste in your calibration values from `translation/calibration/`:
 
@@ -37,7 +37,7 @@ const int openVals[5]   = {your open values here};
 const int closedVals[5] = {your closed values here};
 ```
 
-Don't skip this — the flex readings will be garbage without it.
+Don't skip this - the flex readings will be garbage without it.
 
 ---
 
@@ -61,11 +61,8 @@ For each gesture:
 
 1. Form the gesture and hold it
 2. Type the label (e.g. `HELLO`) in **both** Serial Monitor windows and hit Enter
-3. Hold still for 1.5 seconds — each ESP records 30 samples then stops
+3. Hold still for 1.5 seconds - each ESP records 30 samples then stops
 4. Move on to the next one
-
-Some gestures to start with:
-`HELLO`, `YES`, `NO`, `PLEASE`, `THANKS`, `HELP`, `WATER`, `FOOD`, `GOOD`, `BAD`, `MORE`, `STOP`, `SORRY`, `LOVE`, `NAME`
 
 50+ samples per gesture is enough to get decent accuracy. 100 is better.
 
