@@ -22,7 +22,7 @@ This is the central "brain" of the SIGNO project. It connects via **Bluetooth Lo
 
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 
@@ -61,7 +61,7 @@ npm run ios
 
 ---
 
-## 🏗️ Codebase Structure
+##  Codebase Structure
 
 The app is built with a modular structure to handle asynchronous sensor streams efficiently:
 
@@ -73,7 +73,7 @@ The app is built with a modular structure to handle asynchronous sensor streams 
 
 ---
 
-## 📟 Bluetooth Specs
+##  Bluetooth Specs
 
 The app logic filters for specific BLE advertising names and service/characteristic UUIDs defined in the firmware:
 
@@ -84,7 +84,7 @@ The app logic filters for specific BLE advertising names and service/characteris
 
 ---
 
-## 🛠️ Key Libraries
+##  Key Libraries
 
 - **`react-native-ble-plx`**: High-performance Bluetooth LE management.
 - **`react-native-tts`**: Text-to-Speech engine for audio output.
@@ -92,6 +92,6 @@ The app logic filters for specific BLE advertising names and service/characteris
 
 ---
 
-## ⚠️ Important Note
+##  Important Note
 
 The app expects a **`modelWeights.js`** file in `src/ml/`. If you are building this from scratch, you must first complete the "Data Collection" phase in the project root to generate these weights, or the app will not be able to perform translations.
