@@ -21,7 +21,7 @@ Board: **ESP32C6 Dev Module** | Upload speed: **921600**
 
 Do this before anything else, and do it per-glove - the flex values are different for each hand.
 
-Flash `calibration/calibration.ino`, open Serial Monitor at `115200 baud`, then:
+Flash `calibration.ino`, open Serial Monitor at `115200 baud`, then:
 
 1. Hold all fingers fully open for 5 seconds
 2. Bend all fingers fully closed for 5 seconds
