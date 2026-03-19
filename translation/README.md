@@ -4,19 +4,6 @@ Main firmware for both gloves. This is what you flash after calibration is done 
 
 ---
 
-## Folder structure
-
-```
-translation/
-├── calibration/
-│   └── calibration.ino    ← run this first
-├── glove_left/
-│   └── glove_left.ino
-└── glove_right/
-    └── glove_right.ino
-```
-
----
 
 ## Libraries
 
