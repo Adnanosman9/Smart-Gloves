@@ -17,6 +17,7 @@ Two gloves, each running an ESP32-C6 with 5 flex sensors and an MPU6050. They se
 - [React Native CLI](https://reactnative.dev/docs/environment-setup) -follow the "React Native CLI Quickstart" tab, not Expo
 - [Python 3](https://www.python.org/downloads/) -for the ML training pipeline when that's ready
 - An Android or iOS phone for the app
+- Download the **[Signo APP](app/app-release.apk)** from here
 
 ---
 
