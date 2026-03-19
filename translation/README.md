@@ -85,6 +85,5 @@ Each glove sends JSON at 20Hz:
 | I2C SDA (MPU6050) | GPIO 6 |
 | I2C SCL (MPU6050) | GPIO 7 |
 
-Voltage divider per finger:
 
 
