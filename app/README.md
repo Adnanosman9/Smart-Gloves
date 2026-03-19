@@ -18,7 +18,7 @@ This is the central "brain" of the SIGNO project. It connects via **Bluetooth Lo
 
 > [!TIP]
 > **Just want to use the app?** 
-> [Download the pre-built APK here](./android/app/build/outputs/apk/release/app-release.apk) and install it directly on your Android phone to get started immediately without setting up a development environment.
+> [Download the pre-built APK here](app/app-release.apk) and install it directly on your Android phone to get started immediately without setting up a development environment.
 
 ---
 
