@@ -49,9 +49,9 @@ Flash both over USB before disconnecting.
 
 ---
 
-## Step 3 — Connect the app
+## Step 3 - Connect the app
 
-Open the SIGNO app and tap Connect. It scans for `SIGNO-L` and `SIGNO-R` automatically. If it doesn't find one of them, try restarting that ESP32 — BLE advertising sometimes doesn't start cleanly on first boot.
+Open the SIGNO app and tap Connect. It scans for `SIGNO-L` and `SIGNO-R` automatically. If it doesn't find one of them, try restarting that ESP32 - BLE advertising sometimes doesn't start cleanly on first boot.
 
 ---
 
