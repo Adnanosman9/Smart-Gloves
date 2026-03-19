@@ -22,7 +22,7 @@ data_collect/
 - 2x USB cables
 - Arduino IDE or PlatformIO
 
-Libraries (install from Arduino Library Manager):
+Libraries ;
 - `Adafruit MPU6050`
 - `Adafruit Unified Sensor`
 
@@ -36,8 +36,6 @@ Open both `.ino` files and paste in your calibration values from `translation/ca
 const int openVals[5]   = {your open values here};
 const int closedVals[5] = {your closed values here};
 ```
-
-Don't skip this - the flex readings will be garbage without it.
 
 ---
 
