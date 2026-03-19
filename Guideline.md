@@ -89,30 +89,6 @@ npx react-native run-ios
 
 On Android you'll need to grant `BLUETOOTH_SCAN`, `BLUETOOTH_CONNECT`, and `ACCESS_FINE_LOCATION` - the permissions are already in the manifest, just make sure they're accepted on the device. Tap Connect and it'll find both gloves on its own.
 
----
-
-## Repo layout
-
-```
-Smart-Gloves/
-├── PCB/                        ← KiCad files + Gerber.zip
-├── CAD/                        ← Fusion 360 and STEP files
-├── Images/
-├── BOM.csv
-├── translation/
-│   ├── calibration.ino         ← start here
-│   ├── glove_left.ino
-│   └── glove_right.ino
-├── data_collect/
-│   ├── data_collect_left.ino
-│   └── data_collect_right.ino
-└── app/
-    ├── App.js
-    └── src/
-        ├── hooks/
-        ├── screens/
-        └── ml/                 ← modelWeights.js goes here
-```
 
 ---
 
@@ -132,6 +108,3 @@ If you fix any of the above or build out the ML training pipeline, PRs are welco
 
 ---
 
-## License
-
-See `LICENSE` in the root.
