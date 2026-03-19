@@ -1,4 +1,4 @@
-# Building This Project — A Guide
+# Building This Project - A Guide
 
 This is for anyone trying to build the gloves from scratch or contribute to the project. I'll walk through the full process in the order you actually need to do things.
 
