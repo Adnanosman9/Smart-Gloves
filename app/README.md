@@ -1,4 +1,4 @@
-# 🧤 SIGNO Mobile App
+#  SIGNO Mobile App
 
 <h4 align="center">
 React Native application for real-time sign language translation
