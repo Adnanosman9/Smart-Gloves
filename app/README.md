@@ -49,13 +49,10 @@ This is the central "brain" of the SIGNO project. It connects via **Bluetooth Lo
 ### Running the App
 
 ```bash
-# Start the Metro bundler
 npm start
 
-# In a new terminal, run on Android
 npm run android
 
-# ...or run on iOS
 npm run ios
 ```
 
