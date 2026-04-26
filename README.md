@@ -15,28 +15,12 @@ An wearable smarrt glove that translates Bangladeshi Sign Language (BdSL) into s
 
 </div>
 
-## Overview
+## What is this?
+A lot of deaf people in Bangladesh can't easily communicate with those who don't know sign language. This project tries to fix that, not with cameras or computer vision, but with sensors built directly into a glove. That means it works in any lighting, doesn't need a phone pointed at you, and is actually portable.
 
-Communication is a fundamental right, yet many in the deaf community in Bangladesh face significant barriers. This project is a **sensor based wearable glove** to bridge that gap.
 
-Unlike existing systems that rely on computer vision, this glove uses **integrated sensors** to track hand movements and finger bendings, making it:
-
--  No external cameras needed
--  Works in any lighting condition
--  Built specifically for Bangladeshi Sign Language
-
-## Key Features
-
-- **Dual-Hand Tracking** - ESP32-C6-Mini processes data from 5 flex sensors + MPU-6050 IMU
-- **Compact Design** - Custom PCB placed in 3D-printed "Wrist Hub"
-- **Custom Dataset** - We are willing to make our specific dataset for BdSL
-- **Wireless Ready** - Wi-Fi 6, Bluetooth 5
-
-## How to Use This Project
-
-1. Print the 3D enclosure and assemble the custom PCB.
-2. Use the `firmware.cpp` to the ESP32-C6 to begin collecting sensor data.
-3. The flex sensors and IMU will give the hand gesture output as in csv format with finger bendings and hand poisitioning. 
+## How it works
+The glove uses **5 flex sensors** (one per finger) plus an **MPU-6050 IMU** on the wrist to capture hand position and finger bends. An **ESP32-C6-Mini** processes the data and outputs it as CSV, finger bend values + orientation, which can then be fed into a classifier to recognize BdSL signs.
 
 ## Design
 
@@ -96,13 +80,13 @@ The flex sensors are wired in a pull-down configuration to ensure stable ADC rea
 - 🟢 **Green Wire**: Signal from Sensor to ESP32 ADC pin
 - ⚫ **Black Wire**: path to Ground (GND)
 
-## 🧤 Hardware Mounting & Assembly
+### Enclosure
+* Designed in **Fusion 360**. 
+* Low-profile box that sits on the wrist. 
+* The electronics module detaches from the glove via Velcro straps, so you can actually wash the fabric.
 
->**Sewn Sensor Sleeves**: The flex sensors slide into custom-sewn fabric channels on the back of each finger. This lets the sensors move and slide naturally when you make a fist, taking the physical stress off the delicate traces so they don't break.
-
->**3D-Printed Wrist Hub**: The main brain (ESP32 and IMU) lives inside a low-profile, custom 3D-printed case.
-
->**Velcro Straps**: Instead of permanently gluing the case to the fabric, the Wrist Hub uses built-in strap loops and an adjustable Velcro band. This keeps the IMU firmly anchored to your wrist for accurate tracking, but makes it super easy to pop the electronics off when you need to wash the glove!
+### Sensor Mounting
+* Flex sensors slide into sewn fabric channels on each finger so they can flex naturally without stressing the traces.
 
 ## Bill of Materials
 
