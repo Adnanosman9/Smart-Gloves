@@ -120,29 +120,7 @@ The flex sensors are wired in a pull-down configuration to ensure stable ADC rea
 | Glove Material | 2 | Breathable Fabric | - | - |
 | **Total Estimation** | | | | **~205 USD (includes PCB, Enclosure & other expected cost)** |
 
-### Approximate cost : 205 usd (Costs may vary by the time)
-
-
-## Roadmap
-
-### Phase 1: Hardware Validation (Current)
-Currently working to creating the hardware parts. We are focusing on making it better to use not just a prototype.
-
-### Phase 2: Data Collection
-We are planning to collaborate with a deaf community, most probably Bangladesh national federation of the deaf.
-We want to collaborate to make it better by working with practical data and deaf people to make a proper impact.
-
-### Phase 3: ML Model Development
-- Train gesture recognition model
-- Optimize for ESP32-C6 inference
-- Achieve >90% accuracy on test set
-
-
-## > Currentlly we are working on the coding part || **Coding Partner** [Kishor](https://github.com/kishor1594)
-
-### Hackclub Project and journals [HackClub](https://blueprint.hackclub.com/projects/11759)
-
-## **Proper firmware updated (13th march, 2026)**
+### Approximate cost : 205 usd (Costs may vary over time)
 
 ## ⚠ Caution
  
@@ -155,8 +133,6 @@ This project uses:
 - [Hack Club](https://hackclub.com/) for support and inspiration
 
 ---
-
-**Built to empower the deaf community in Bangladesh**
 
 > GitHub [@Adnanosman](https://github.com/Adnanosman9)
 
