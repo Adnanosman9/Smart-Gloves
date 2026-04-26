@@ -1,7 +1,8 @@
-#  SIGNO Mobile App
-
+<h2 align="center">
+   SIGNO Mobile App
+</h2>
 <h4 align="center">
-React Native application for real-time sign language translation
+   React Native application for real-time sign language translation
 </h4>
 
 <div align="center">
@@ -14,7 +15,7 @@ React Native application for real-time sign language translation
 
 ## Overview
 
-This is the central "brain" of the SIGNO project. It connects via **Bluetooth Low Energy (BLE)** to both the left and right gloves, processes sensor data streaming at 20Hz, and uses a pre-trained ML model to translate Bangladeshi Sign Language (BdSL) into spoken audio in real-time.
+This is the app that ties the whole SIGNO project together. It connects to both gloves over BLE, pulls in sensor data at 20Hz, runs it through an ML model, and speaks out the translated BdSL sign — all in real-time.
 
 > [!TIP]
 > **Just want to use the app?** 
@@ -40,10 +41,6 @@ This is the central "brain" of the SIGNO project. It connects via **Bluetooth Lo
 2. Install dependencies:
    ```bash
    npm install
-   ```
-3. (iOS Only) Install pods:
-   ```bash
-   cd ios && pod install && cd ..
    ```
 
 ### Running the App
