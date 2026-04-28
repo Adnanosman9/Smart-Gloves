@@ -71,9 +71,9 @@ The app only connects to devices with these names:
 
 
 ## Libraries Used
-```react-native-ble-plx``` → BLE connection handling
-```react-native-tts``` → text-to-speech output
-```react-native-permissions``` → handles Android permissions
+- ```react-native-ble-plx``` : BLE connection handling
+- ```react-native-tts``` : text-to-speech output
+- ```react-native-permissions``` : handles Android permissions
 
 > ## Important
 
