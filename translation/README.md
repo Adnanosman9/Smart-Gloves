@@ -1,89 +1,57 @@
 # Translation Firmware
 
-Main firmware for both gloves. This is what you flash after calibration is done and the ML model is ready.
+This is the main firmware for both gloves.  
+Use this after calibration is done and your ML model is ready.
 
 ---
-
 
 ## Libraries
 
 Install from Arduino Library Manager:
-- `ESP32 BLE Arduino` (comes with the ESP32 board package)
-- `Adafruit MPU6050`
-- `Adafruit Unified Sensor`
-- `ArduinoJson`
 
-Board: **ESP32C6 Dev Module** | Upload speed: **921600**
+- ESP32 BLE Arduino (usually comes with ESP32 board package)
+- Adafruit MPU6050
+- Adafruit Unified Sensor
+- ArduinoJson
 
 ---
 
-## Step 1 - Calibrate
+## Step 1 - Calibration (Do this properly)
 
-Do this before anything else, and do it per-glove - the flex values are different for each hand.
+You need to calibrate **each glove separately**.  
+Flex sensor readings are never exactly the same between hands.
 
-Flash `calibration.ino`, open Serial Monitor at `115200 baud`, then:
+Flash `calibration.ino`, open Serial Monitor, then:
 
-1. Hold all fingers fully open for 5 seconds
-2. Bend all fingers fully closed for 5 seconds
-3. Copy the `openVals` and `closedVals` arrays it prints
+1. Keep all fingers fully open (~5 seconds)
+2. Then close all fingers fully (~5 seconds)
+3. Copy the `openVals` and `closedVals` printed in Serial
 
-Paste them into both `glove_left.ino` and `glove_right.ino`:
+Paste them into both:
+- `glove_left.ino`
+- `glove_right.ino`
 
 ```cpp
-const int openVals[5]   = { /* your values */ };
-const int closedVals[5] = { /* your values */ };
+const int openVals[5]   = {your values};
+const int closedVals[5] = {your values};
 ```
 
-If the values look the same for open and closed, something's wrong with the wiring - check the voltage divider first.
+## Step 2 - Flash to Gloves
 
----
-
-## Step 2 - Flash
-
-| File | Glove | BLE name |
-|------|-------|----------|
-| `glove_left.ino` | Left hand | `SIGNO-L` |
-| `glove_right.ino` | Right hand | `SIGNO-R` |
-
-Flash both over USB before disconnecting.
-
----
-
-## Step 3 - Connect the app
-
-Open the SIGNO app and tap Connect. It scans for `SIGNO-L` and `SIGNO-R` automatically. If it doesn't find one of them, try restarting that ESP32 - BLE advertising sometimes doesn't start cleanly on first boot.
-
----
-
-## BLE packet format
-
-Each glove sends JSON at 20Hz:
-
-```json
-{"h":"L","f":[0.85,0.90,0.05,0.02,0.01],"a":[0.01,-0.02,0.99],"g":[0.01,0.00,-0.01],"t":12345}
-```
-
-| Key | Description |
-|-----|-------------|
-| `h` | hand — `"L"` or `"R"` |
-| `f` | 5 flex values (0.0 = open, 1.0 = closed) |
-| `a` | accelerometer [x, y, z] in g |
-| `g` | gyroscope [x, y, z] in rad/s |
-| `t` | timestamp in ms |
-
----
-
-## Pin wiring
-
-| Signal | GPIO |
-|--------|------|
-| Thumb flex | GPIO 0 |
-| Index flex | GPIO 1 |
-| Middle flex | GPIO 2 |
-| Ring flex | GPIO 3 |
-| Pinky flex | GPIO 4 |
-| I2C SDA (MPU6050) | GPIO 6 |
-| I2C SCL (MPU6050) | GPIO 7 |
+| File              | Glove | BLE Name  |
+| ----------------- | ----- | --------- |
+| `glove_left.ino`  | Left  | `SIGNO-L` |
+| `glove_right.ino` | Right | `SIGNO-R` |
 
 
+## Step 3 - Connect to App
 
+Open the SIGNO app and press Connect.
+
+It should automatically detect:
+- SIGNO-L
+- SIGNO-R
+
+<br>
+
+## *__I didn't have any physical component and don't have yet, so now I can't give bebug solution for every problem that will show up, I will add it up soon.__*
