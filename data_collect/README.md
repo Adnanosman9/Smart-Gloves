@@ -1,104 +1,108 @@
 # Dataset Collection Firmware
 
-Firmware for recording labeled gesture data from both gloves over USB serial. Each glove outputs its own CSV — you merge them later and use the combined file to train the classifier.
+This firmware is used to record gesture data from both gloves over USB serial.  
+Each glove saves its own CSV file. Later, both files are merged and used to train the model.
 
 ---
 
-## Folder Structure
+## Requirements
 
-```
-data_collect/
-├── data_collect_left/
-│   └── data_collect_left.ino   ← flash to LEFT glove
-└── data_collect_right/
-    └── data_collect_right.ino  ← flash to RIGHT glove
-```
-
----
-
-## What You Need
-
-- Both gloves assembled with ESP32-C6
-- 2x USB cables
-- Arduino IDE or PlatformIO
-- Libraries: `Adafruit MPU6050`, `Adafruit Unified Sensor`
+- 2 gloves with ESP32-C6  
+- 2 USB cables (one for each glove)  
+- Arduino IDE or PlatformIO  
+- Libraries:
+  - Adafruit MPU6050  
+  - Adafruit Unified Sensor  
 
 ---
 
-## Before You Start
+## Before You Start (Don’t Skip This)
 
-Open both `.ino` files and paste in your calibration values from `translation/calibration/`:
+Open both `.ino` files and update the calibration values:
 
 ```cpp
-const int openVals[5]   = {your open values here};
-const int closedVals[5] = {your closed values here};
+const int openVals[5]   = {...};
+const int closedVals[5] = {...};
 ```
+Use the values from your calibration step.
 
-Don't skip this — bad calibration = bad data = bad model.
+If these are wrong, your flex readings will be inaccurate and you’ll likely have to redo your dataset. It’s worth checking twice here.
 
----
+Recording Process
+## 1. Flash both gloves
 
-## Recording Gestures
+Upload:
 
-### 1. Flash both gloves
+```data_collect_left.ino``` → left glove
 
-Flash `data_collect_left.ino` to the left and `data_collect_right.ino` to the right, both over USB.
+```data_collect_right.ino``` → right glove
 
-### 2. Open two Serial Monitors
 
-Two separate Arduino IDE windows, one per glove, both at `115200 baud`. You'll see the CSV header print on startup:
+## 2. Open Serial Monitors
 
-```
-label,thumb,index,middle,ring,pinky,ax,ay,az,gx,gy,gz,timestamp
-```
+Open two Serial Monitor windows (one for each glove)
 
-### 3. Record
+On startup, you should see:
+
+```label,thumb,index,middle,ring,pinky,ax,ay,az,gx,gy,gz,timestamp```
+
+If you don’t see this, check:
+- Correct COM port
+- Baud rate
+- Cable connection
+
+
+## 3. Recording Gestures
 
 For each gesture:
+- Form the gesture and hold it steady
+- Type the label (e.g. HELLO) into both Serial Monitors and press Enter
+- Keep holding the gesture while it records
+- Each glove records ~30 samples, then stops automatically
 
-1. Form the gesture and hold it still
-2. Type the label (e.g. `HELLO`) into **both** Serial Monitor windows and hit Enter
-3. Hold for ~1.5 seconds — each glove records 30 samples then stops automatically
-4. Repeat for the next gesture
+Repeat for all gestures.
 
-Aim for 50+ samples per gesture minimum. 100 is better.
+> Try to stay still while recording — even small movements can add noise.
 
-### 4. Save the output
+
+## 4. How Much Data?
+
+- Minimum: ~50 samples per gesture
+- Recommended: 80–100 samples
+
+> More variation usually helps the model perform better.
+
+## 5. Save the Data
 
 Copy the Serial Monitor output from each window and save as:
-- `left_hand.csv`
-- `right_hand.csv`
-
----
+- left_hand.csv
+- right_hand.csv
 
 ## After Recording
 
-Head to the `ml/` folder and run the training script. It will:
+Go to the ml/ folder and run the training script.
 
-1. Merge both CSVs by timestamp
-2. Train the Random Forest classifier
-3. Export `modelWeights.js` ready to drop into the app
+It will:
+- Merge both CSV files using timestamps
+- Train a Random Forest classifier
+- Export modelWeights.js for use in the app
 
----
 
-## CSV Format
+## CSV format reference 
 
-| Column | Description |
-|---|---|
-| `label` | gesture name you typed |
-| `thumb` | flex value (0.0 = open, 1.0 = fully bent) |
-| `index` | index finger |
-| `middle` | middle finger |
-| `ring` | ring finger |
-| `pinky` | pinky finger |
-| `ax` `ay` `az` | accelerometer (g) |
-| `gx` `gy` `gz` | gyroscope (rad/s) |
-| `timestamp` | ESP32 uptime in ms |
+| Column        | Description                            |
+| ------------- | -------------------------------------- |
+| label         | gesture name                           |
+| thumb → pinky | flex values (0 = open, 1 = fully bent) |
+| ax, ay, az    | accelerometer (g)                      |
+| gx, gy, gz    | gyroscope (rad/s)                      |
+| timestamp     | time in ms                             |
 
----
 
-## Notes
+## Notes / Common Issues
+- Both gloves need to record at the same time, otherwise merging won’t work properly
+- On Windows, COM ports can change when reconnecting devices
+- If Serial Monitor doesn’t connect, recheck the selected port
+- If flex readings look off, redo calibration before collecting more data
 
-- Both gloves need to be recording at the same time — mismatched timestamps will break the merge step
-- On Windows, check Device Manager for the correct COM port if Serial Monitor won't connect
-- If flex readings look wrong, redo calibration before collecting any data
+
