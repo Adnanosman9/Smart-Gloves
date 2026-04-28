@@ -1,8 +1,9 @@
 <h2 align="center">
    SIGNO Mobile App
 </h2>
+
 <h4 align="center">
-   React Native application for real-time sign language translation
+   React Native app for real-time sign language translation
 </h4>
 
 <div align="center">
@@ -13,79 +14,71 @@
 
 </div>
 
+---
+
 ## Overview
 
-This is the app that ties the whole SIGNO project together. It connects to both gloves over BLE, pulls in sensor data at 20Hz, runs it through an ML model, and speaks out the translated BdSL sign — all in real-time.
+This is the mobile app that connects everything in SIGNO.
+
+It pairs with both gloves over BLE, receives sensor data at ~20Hz, runs it through the ML model, and outputs the translated BdSL sign with audio feedback.
+
+It’s designed to work in real time on an actual Android device (emulator BLE is unreliable).
 
 > [!TIP]
-> **Just want to use the app?** 
-> [Download the pre-built APK here](app-release.apk) and install it directly on your Android phone to get started immediately without setting up a development environment.
+> If you just want to try it:
+> Install the APK from `app-release.apk` and run it on your phone.
 
 ---
 
-##  Getting Started
+## Getting Started
 
-### Prerequisites
+### Requirements
 
-- **Node.js**: LTS version (18+)
-- **React Native CLI**: Follow the [official setup guide](https://reactnative.dev/docs/environment-setup)
-- **Java SDK**: JDK 17+ (for Android)
-- **Physical Device**: BLE performance is best tested on a real phone
+- Node.js (18+ recommended)
+- React Native CLI setup (follow official docs if needed)
+- JDK 17+
+- Android phone with BLE support (important)
 
-### Installation
+---
 
-1. Navigate to the app directory:
-   ```bash
-   cd app
-   ```
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
+### Setup
 
-### Running the App
+Go into the app folder:
 
 ```bash
-npm start
-
-npm run android
-
-npm run ios
+cd app
 ```
 
----
+### Install dependencies:
+```
+npm install
+```
 
-##  Codebase Structure
+### Run the app
+```
+npm start
+npm run android
+```
 
-The app is built with a modular structure to handle asynchronous sensor streams efficiently:
+## Bluetooth Setup
 
-- **`src/hooks/useBleGloves.js`**: The core BLE management hook. Handles scanning, simultaneous connection to two gloves, and JSON packet parsing.
-- **`src/ml/`**: Contains the model weights and inference logic.
-- **`src/screens/`**:
-  - `TranslateScreen.js`: Main real-time translation interface with visual feedback.
-  - `HistoryScreen.js`: Logs of previous translations.
+The app only connects to devices with these names:
 
----
+| Glove | Name      |
+| ----- | --------- |
+| Left  | `SIGNO-L` |
+| Right | `SIGNO-R` |
 
-##  Bluetooth Specs
 
-The app logic filters for specific BLE advertising names and service/characteristic UUIDs defined in the firmware:
+## Libraries Used
+```react-native-ble-plx``` → BLE connection handling
+```react-native-tts``` → text-to-speech output
+```react-native-permissions``` → handles Android permissions
 
-| Glove | Advertising Name | Service UUID |
-|-------|------------------|--------------|
-| **Left** | `SIGNO-L` | `4fafc201-1fb5-459e-8fcc-c5c9c331914b` |
-| **Right** | `SIGNO-R` | `4fafc201-1fb5-459e-8fcc-c5c9c331914c` |
+> ## Important
 
----
+The app needs ```src/ml/modelWeights.js``` file to work:
 
-##  Key Libraries
+If this file is missing, the app won’t translate anything.
 
-- **`react-native-ble-plx`**: High-performance Bluetooth LE management.
-- **`react-native-tts`**: Text-to-Speech engine for audio output.
-- **`react-native-permissions`**: Handles Android 12+ Bluetooth and Location permission requests.
-
----
-
-##  Important Note
-
-The app expects a **`modelWeights.js`** file in `src/ml/`. If you are building this from scratch, you must first complete the "Data Collection" phase in the project root to generate these weights, or the app will not be able to perform translations.
+Generate it by running the ML training after collecting glove data.
