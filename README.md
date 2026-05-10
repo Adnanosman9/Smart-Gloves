@@ -20,27 +20,40 @@ A lot of deaf people in Bangladesh can't easily communicate with those who don't
 
 
 ## How it works
-The glove uses **5 flex sensors** (one per finger) plus an **MPU-6050 IMU** on the wrist to capture hand position and finger bends. An **ESP32-C6-Mini** processes the data and outputs it as CSV, finger bend values + orientation, which can then be fed into a classifier to recognize BdSL signs.
+Five finger-mounted sensors are 3D-printed directly from **Conductive TPU**, acting as flex sensors through the piezoresistive effect, they change resistance as each finger bends. A **XIAO ESP32-C3** reads those values alongside orientation data from an **MPU-6050** IMU, maps them into a hand-geometry profile, and classifies the result into BdSL signs, transmitted over Bluetooth LE.
+ 
+No cameras. No fragile commercial sensors. Works in any lighting, anywhere.
 
-## Design
+## Engineering Highlights
+ 
+### Dual-Material Exoskeleton (Fusion 360)
+ 
+The finger segments are FDM-printed in two materials simultaneously:
+ 
+- **White TPU**: flexible structural base, comfortable to wear
+- **Black Conductive TPU**: integrated sensing traces that shift resistance with bend angle
+Segments come in two geometries ("Long" and "Short") to fit fingers anatomically, including the thumb and pinky.
+ 
+<img src="Images/Finger and sensor.png" alt="Integrated Sensor Design" width="800"/>
 
 Designed in KiCad and Fusion 360 for PCB and Enclosure
 
-### PCB
+### Custom PCB (KiCad)
+ 
+A low-profile wrist hub houses all electronics, with a few deliberate design choices:
 
-Designed in KiCad with multi-layer board and antenna keep-out zone
+- **Xiao ESP32-C3** used for high speed transmition in small size. 
+- **47kΩ voltage divider** network tuned for high-impedance sensor readings
+- **0.1µF decoupling caps** to filter noise from the printed traces
+DRC: 0 errors.
 
 **Schematic:**
 
-<img src="Images/glove_schemetic.png" alt="Schematic" width="800"/>
+<img src="Images/glove_schematic.png" alt="Schematic" width="800"/>
 
 **PCB Layout:**
 
 <img src="Images/glove_pcb.png" alt="PCB Layout" width="800"/>
-
-**PCB 3D View:**
-
-<img src="Images/3D View.png" alt="PCB 3D" width="800"/>
 
 ### Wrist Hub Enclosure
 
@@ -60,51 +73,22 @@ Designed in Fusion 360 for maximum portability
 
 <img src="Images/Box Assembly 3.png" alt="Assembly" width="800"/>
 
-**Wiring Diagram:**
-
-<img src="Images/Wiring Diagram.png" alt="Assembly" width="800"/>
 
 ### ✅ Design Verification
 
 **KiCad DRC Results (0 Errors):**
-The PCB design passed the Design Rule Checker with 0 errors, but it has 2 warnings and these warnings are just for a slikscreen border on the antena area.
+The PCB design passed the Design Rule Checker with 0 errors, but it has warnings and these warnings are just for a slikscreen text warning.
 
-<img src="Images/Warning message.png" alt="KiCad DRC Verification" width="800"/>
-
-### Hardware Wiring
-
-**Voltage Divider Configuration:**
-The flex sensors are wired in a pull-down configuration to ensure stable ADC readings:
-
-- 🔴 **Red Wire**: 3.3V Power to Sensor
-- 🟢 **Green Wire**: Signal from Sensor to ESP32 ADC pin
-- ⚫ **Black Wire**: path to Ground (GND)
+<img src="Images/Warning.png" alt="KiCad DRC Verification" width="800"/>
 
 ### Enclosure
 * Designed in **Fusion 360**. 
 * Low-profile box that sits on the wrist. 
 * The electronics module detaches from the glove via Velcro straps, so you can actually wash the fabric.
 
-### Sensor Mounting
-* Flex sensors slide into sewn fabric channels on each finger so they can flex naturally without stressing the traces.
-
 ## Bill of Materials
 
-| Component / Part | Qty | Value / Specs | Link | Cost (BDT) |
-| :--- | :--- | :--- | :--- | :--- |
-| ESP32-C6-MINI-1 | 2 | Wi-Fi/BLE MCU | [Shop Link](https://store.roboticsbd.com/internet-of-things-iot/3855-esp32-c6-supermini-development-board-wifi-6-bluetooth-5-le-risc-v-32-bit-robotics-bangladesh.html) | 620x2 = 1240 |
-| MPU-6050 | 2 | 6-DoF IMU | [Shop Link](https://store.roboticsbd.com/robotics-parts/104-6dof-accelerometer-gyroscope-gy-521-mpu-6050-robotics-bangladesh.html) | 360x2 = 720 |
-| Resistor | 10 | 10kΩ | [Shop Link](https://www.electronics.com.bd/fixed-resistors/resistor-10k-ohm-0-25w) | 15 |
-| Resistor | 4 | 4.7kΩ | [Shop Link](https://www.electronics.com.bd/fixed-resistors/resistor-4-7k-ohm-0-25w) | 10 |
-| Capacitor | 4 | 0.1uF | [Shop Link](https://store.roboticsbd.com/capacitor/2280-01uf-50v-capacitor-robotics-bangladesh.html) | 12 |
-| Male Header Pins | 10 | 1x02 Pin | [Shop Link](https://store.roboticsbd.com/connector/653-male-pin-header-single-row-l-shaped-robotics-bangladesh.html) | 18 |
-| Flex Sensors | 10 | 4.5 inch | [Shop Link](https://www.electronics.com.bd/sensors/flex-sensor-4-5?srsltid=AfmBOorxq734_F29vBK2kye2oFEvBfQKv7jxRflG7IaUrFKZaXeHipuE) | 2062x10 = 20620 |
-| Custom PCB | 2 | 2 layer | [JLCPCB](https://jlcpcb.com/) | - |
-| LiPo Battery | 2 | 3.7V (~1200mAh) | [Shop Link](https://www.electronics.com.bd/lipo-battery/li-ion-battery-1200mah-3-7v-1-cell) | 455x2 = 910 |
-| Glove Material | 2 | Breathable Fabric | - | - |
-| **Total Estimation** | | | | **~205 USD (includes PCB, Enclosure & other expected cost)** |
-
-### Approximate cost : 205 usd (Costs may vary over time)
+[BOM](bom/BOM.csv) is here. 
 
 ## ⚠ Caution
  
