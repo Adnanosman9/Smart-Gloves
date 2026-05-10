@@ -32,11 +32,11 @@ Designed in KiCad with multi-layer board and antenna keep-out zone
 
 **Schematic:**
 
-<img src="Images/Glove_Schemetic.png" alt="Schematic" width="800"/>
+<img src="Images/glove_schemetic.png" alt="Schematic" width="800"/>
 
 **PCB Layout:**
 
-<img src="Images/Glove_PCB.png" alt="PCB Layout" width="800"/>
+<img src="Images/glove_pcb.png" alt="PCB Layout" width="800"/>
 
 **PCB 3D View:**
 
