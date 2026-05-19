@@ -40,7 +40,7 @@ The previous version of this project got two pieces of feedback:
  
 Both fair points. Here's what changed:
  
-**On the sensors:** Flex sensors are just expensive — there's no way around it. BdSL uses both hands, so that's 10 fingers, 10 sensors. The cheapest viable 4.5" option is ~$8/sensor, which puts the total at $80. That's already the budget option; Spectra Symbol equivalents run $16+ each. The $80 isn't extravagant, it's the floor.
+**On the sensors:** Flex sensors are just expensive, there's no way around it. BdSL uses both hands, so that's 10 fingers, 10 sensors. The cheapest viable 4.5" option is ~$8/sensor, which puts the total at $80. That's already the budget option. The $80 isn't extravagant; it's the floor.
  
 **On the CAD:** A finger exoskeleton was added in repo, TPU guide segments per finger that hold each flex sensor flat against the joint. Standard white TPU, printable by any FDM service. The wrist hub box is still there, but the glove now actually looks like a glove.
 
