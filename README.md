@@ -101,16 +101,6 @@ Designed in Fusion 360 for maximum portability
 
 <img src="Images/Box case.png" alt="Case Top" width="800"/>
 
-## Assembly:
-
-**Sensors assembly:**
-
-<img src="Images/Box Assembly 1.png" alt="Assembly" width="800"/>
-
-<img src="Images/Box Assembly 2.png" alt="Assembly" width="800"/>
-
-<img src="Images/Box Assembly 3.png" alt="Assembly" width="800"/>
-
 
 ### ✅ Design Verification
 
@@ -136,6 +126,7 @@ The PCB design passed the Design Rule Checker with 0 errors, but it has warnings
 This project uses:
 - [KiCad](https://www.kicad.org/) for PCB design
 - [Autodesk Fusion 360](https://www.autodesk.com/products/fusion-360/) for enclosure design
+- [Open print sense](https://github.com/PaBu04/OpenPrintSense/tree/main) for the 3d printed sensor design
 - [Hack Club](https://hackclub.com/) for support and inspiration
 
 ---
