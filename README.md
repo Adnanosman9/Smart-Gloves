@@ -18,11 +18,19 @@ An wearable smarrt glove that translates Bangladeshi Sign Language (BdSL) into s
 ## What is this?
 A lot of deaf people in Bangladesh can't easily communicate with those who don't know sign language. This project tries to fix that, not with cameras or computer vision, but with sensors built directly into a glove. That means it works in any lighting, doesn't need a phone pointed at you, and is actually portable.
 
-
 ## How it works
-Five finger-mounted sensors are 3D-printed directly from **Conductive TPU**, acting as flex sensors through the piezoresistive effect, they change resistance as each finger bends. A **XIAO ESP32-C3** reads those values alongside orientation data from an **MPU-6050** IMU, maps them into a hand-geometry profile, and classifies the result into BdSL signs, transmitted over Bluetooth LE.
  
-No cameras. No fragile commercial sensors. Works in any lighting, anywhere.
+The glove supports two sensing approaches depending on what you have access to:
+ 
+**1. Commercial flex sensors (recommended)**
+Five 4.5" flex sensors run along each finger, held in place by custom 3D-printed TPU guide segments. As each finger bends, the sensor's resistance shifts and gets picked up by the ADC.
+ 
+**2. Conductive TPU (if you have your own 3D printer)**
+The finger segments can be printed directly in Conductive TPU, acting as flex sensors through the piezoresistive effect, resistance changes as the filament bends. No separate sensor needed. The catch is that no commercial print service supports conductive TPU filament, so this only works if you have your own printer and the filament.
+ 
+Either way, a **XIAO ESP32-C3** reads those values alongside orientation data from an **MPU-6050** IMU, maps them into a hand-geometry profile, and classifies the result into BdSL signs, transmitted over Bluetooth LE.
+ 
+No cameras. Works in any lighting, anywhere.
 
 ## Addressing the Hack Club Review
  
