@@ -23,7 +23,7 @@ A lot of deaf people in Bangladesh can't easily communicate with those who don't
 The glove supports two sensing approaches depending on what you have access to:
  
 **1. Commercial flex sensors (recommended)**
-Five 4.5" flex sensors run along each finger, held in place by custom 3D-printed TPU guide segments. As each finger bends, the sensor's resistance shifts and gets picked up by the ADC.
+Five 2.2" flex sensors run along each finger, held in place by custom 3D-printed TPU guide segments. As each finger bends, the sensor's resistance shifts and gets picked up by the ADC.
  
 **2. Conductive TPU (if you have your own 3D printer)**
 The finger segments can be printed directly in Conductive TPU, acting as flex sensors through the piezoresistive effect, resistance changes as the filament bends. No separate sensor needed. The catch is that no commercial print service supports conductive TPU filament, so this only works if you have your own printer and the filament.
@@ -40,7 +40,7 @@ The previous version of this project got two pieces of feedback:
  
 Both fair points. Here's what changed:
  
-**On the sensors:** Flex sensors are just expensive, there's no way around it. BdSL uses both hands, so that's 10 fingers, 10 sensors. The cheapest viable 4.5" option is ~$8/sensor, which puts the total at $80. That's already the budget option. The $80 isn't extravagant; it's the floor.
+**On the sensors:** Flex sensors are just expensive, there's no way around it. BdSL uses both hands, so that's 10 fingers, 10 sensors. The cheapest viable 2.2" option is ~$8/sensor, which puts the total at $80. That's already the budget option. The $80 isn't extravagant; it's the floor.
  
 **On the CAD:** A finger exoskeleton was added in repo, TPU guide segments per finger that hold each flex sensor flat against the joint. Standard white TPU, printable by any FDM service. The wrist hub box is still there, but the glove now actually looks like a glove.
 
@@ -59,7 +59,7 @@ Segments come in two geometries ("Long" and "Short") to fit fingers anatomically
 # Notice⚠️
 ## Why not 3D-printed sensors?
 The original plan was to print the sensors directly from Conductive TPU using the piezoresistive effect, no commercial sensors needed. The problem is that no commercial 3D printing service actually supports conductive TPU filament, so you'd need your own printer and the filament to pull it off.
-Instead, the exoskeleton uses standard white TPU guide segments that hold 4.5" commercial flex sensors in the correct position along each finger joint. Same result, actually reproducible.
+Instead, the exoskeleton uses standard white TPU guide segments that hold 2.2" commercial flex sensors in the correct position along each finger joint. Same result, actually reproducible.
 
 ## Engineering Highlights
 Finger Guide System from [zackfreedman](https://www.thingiverse.com/thing:1606915) 
