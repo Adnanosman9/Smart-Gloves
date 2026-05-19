@@ -24,6 +24,18 @@ Five finger-mounted sensors are 3D-printed directly from **Conductive TPU**, act
  
 No cameras. No fragile commercial sensors. Works in any lighting, anywhere.
 
+## Addressing the Hack Club Review
+ 
+The previous version of this project got two pieces of feedback:
+ 
+> *"$80 seems a bit much for flex sensors"* and *"your CAD only shows a box, could you maybe design some flexible structure out of TPU?"*
+ 
+Both fair points. Here's what changed:
+ 
+**On the sensors:** Flex sensors are just expensive — there's no way around it. BdSL uses both hands, so that's 10 fingers, 10 sensors. The cheapest viable 4.5" option is ~$8/sensor, which puts the total at $80. That's already the budget option; Spectra Symbol equivalents run $16+ each. The $80 isn't extravagant, it's the floor.
+ 
+**On the CAD:** A finger exoskeleton was added in repo, TPU guide segments per finger that hold each flex sensor flat against the joint. Standard white TPU, printable by any FDM service. The wrist hub box is still there, but the glove now actually looks like a glove.
+
 ## Engineering Highlights
  
 ### Dual-Material Exoskeleton (Fusion 360)
@@ -36,13 +48,27 @@ Segments come in two geometries ("Long" and "Short") to fit fingers anatomically
  
 <img src="Images/Finger and sensor.png" alt="Integrated Sensor Design" width="800"/>
 
+# Notice⚠️
+## Why not 3D-printed sensors?
+The original plan was to print the sensors directly from Conductive TPU using the piezoresistive effect, no commercial sensors needed. The problem is that no commercial 3D printing service actually supports conductive TPU filament, so you'd need your own printer and the filament to pull it off.
+Instead, the exoskeleton uses standard white TPU guide segments that hold 4.5" commercial flex sensors in the correct position along each finger joint. Same result, actually reproducible.
+
+## Engineering Highlights
+Finger Guide System from [zackfreedman](https://www.thingiverse.com/thing:1606915) 
+
+Each finger uses TPU guide segments that form a channel, keeping the flex sensor flat and correctly angled against the joint. The sensor slides in and is retained mechanically. no adhesive needed.
+
+White TPU - flexible, comfortable, printable by any FDM service
+Two segment sizes: "Long" for index, middle, and ring fingers; "Short" for thumb and pinky
+
+<hr>
 Designed in KiCad and Fusion 360 for PCB and Enclosure
 
 ### Custom PCB (KiCad)
  
 A low-profile wrist hub houses all electronics, with a few deliberate design choices:
 
-- **Xiao ESP32-C3** used for high speed transmition in small size. 
+- **Xiao ESP32-C3** used for high-speed transmission in a small size. 
 - **47kΩ voltage divider** network tuned for high-impedance sensor readings
 - **0.1µF decoupling caps** to filter noise from the printed traces
 DRC: 0 errors.
