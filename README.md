@@ -32,6 +32,8 @@ Either way, a **XIAO ESP32-C3** reads those values alongside orientation data fr
  
 No cameras. Works in any lighting, anywhere.
 
+Just print either [for flex sensors](https://github.com/Adnanosman9/Smart-Gloves/tree/main/CAD%20for%20flex%20sensor) or [for 3d printed sensor](https://github.com/Adnanosman9/Smart-Gloves/tree/main/CAD_3d%20printed%20sensor)
+
 ## Addressing the Hack Club Review
  
 The previous version of this project got two pieces of feedback:
@@ -63,12 +65,14 @@ Instead, the exoskeleton uses standard white TPU guide segments that hold 2.2" c
 
 ## Engineering Highlights
 Finger Guide System from [zackfreedman](https://www.thingiverse.com/thing:1606915) 
+Find the design [here](https://github.com/Adnanosman9/Smart-Gloves/blob/main/CAD%20for%20flex%20sensor/Ring_Glove_Parametric.stl)
 
 Each finger uses TPU guide segments that form a channel, keeping the flex sensor flat and correctly angled against the joint. The sensor slides in and is retained mechanically. no adhesive needed.
 
 White TPU - flexible, comfortable, printable by any FDM service
 Two segment sizes: "Long" for index, middle, and ring fingers; "Short" for thumb and pinky
 
+<img src="Images/TPU guide.jpg" alt="Integrated Sensor Design" width="800"/>
 <hr>
 Designed in KiCad and Fusion 360 for PCB and Enclosure
 
