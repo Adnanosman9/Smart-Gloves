@@ -9,7 +9,7 @@ An wearable smarrt glove that translates Bangladeshi Sign Language (BdSL) into s
 
 <div align="center">
 
-![ESP32](https://img.shields.io/badge/ESP32--C6-000000?style=for-the-badge&logo=espressif&logoColor=white)
+![ESP32](https://img.shields.io/badge/XIao--ESP32--C3-000000?style=for-the-badge&logo=espressif&logoColor=white)
 ![KiCad](https://img.shields.io/badge/KiCad-314CB0?style=for-the-badge&logo=kicad&logoColor=white)
 ![Fusion 360](https://img.shields.io/badge/Fusion%20360-FF6B00?style=for-the-badge&logo=autodesk&logoColor=white)
 
