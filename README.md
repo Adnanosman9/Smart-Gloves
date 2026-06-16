@@ -93,13 +93,19 @@ DRC: 0 errors.
 
 <img src="Images/glove_pcb.png" alt="PCB Layout" width="800"/>
 
-### Wrist Hub Enclosure
+# Wrist Hub Enclosure
 
-Designed in Fusion 360 for maximum portability
+### Designed in Fusion 360 for maximum portability
 
-**Box Case:**
+## **Box Case:**
 
 <img src="Images/Box case.png" alt="Case Top" width="800"/>
+
+## Enclosure and PCB render
+
+<img src="Images/Box Assembly 3.png" alt="Case Top" width="800"/>
+
+<img src="Images/Box Assembly 2.png" alt="Case Top" width="800"/>
 
 
 ### ✅ Design Verification
