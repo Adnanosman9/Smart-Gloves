@@ -89,11 +89,22 @@ DRC came back 0 errors. There are some silkscreen warnings but those are just te
 
 Designed in Fusion 360. Sits on the wrist, low-profile. The whole electronics module attaches with Velcro so you can pull it off and actually wash the glove fabric.
 
+### Find the enclosure [here](https://github.com/Adnanosman9/Smart-Gloves/blob/main/CAD%20for%20flex%20sensor/assembly.f3z)
+
 <img src="Images/Box case.png" alt="Wrist hub box" width="800"/>
 
 <img src="Images/Box Assembly 3.png" alt="Assembly render" width="800"/>
 
 <img src="Images/Box Assembly 2.png" alt="Assembly render 2" width="800"/>
+
+
+## 3d printed flex sensor
+
+To use 3d printed sensor instead of commercial sensors yyou can use it
+
+find the design here
+### * [Mid finger](https://github.com/Adnanosman9/Smart-Gloves/blob/main/CAD_3d%20printed%20sensor/Mid%20fingers-TPU.f3z)
+### * [pinky and thumb finger](https://github.com/Adnanosman9/Smart-Gloves/blob/main/CAD_3d%20printed%20sensor/Pinky_Thumb_finger--TPU.f3z)
 
 <img src="Images/Finger and sensor.png" alt="Finger segment with sensor" width="800"/>
 
