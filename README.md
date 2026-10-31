@@ -1,10 +1,10 @@
 # BdSL Translator Glove
 
-The **BdSL Translator Glove** is a wearable device designed to translate Bangladeshi Sign Language into words without requiring any camera setup.
+The **BdSL Translator Glove** is a wearable device designed to translate BdSL into words without any camera setup.
 
 ## How It Works
 
-*   **Sensors:** The glove tracks movement using either ready-made bend sensors or custom, flexible 3D-printed tpu that changes its electrical voltage when your fingers move.
+*   **Sensors:** The glove tracks movement using bend sensors or custom, flexible 3D-printed tpu that changes its voltage when your fingers move.
 *   **Brain:** An esp module tracks exactly how your hand moves and tilts, turns those gestures into data, and sends the translated speech to a device.
 
 ## Recent Design Updates
@@ -47,7 +47,7 @@ The KiCad DRC checked out cleanly with 0 errors (just a few minor silkscreen ove
 
 ## Enclosure
 
-The wrist housing was designed in Fusion 360 to keep a low profile on your arm. The neat part here is that the main electronics bay mounts to the glove using Velcro. When the fabric gets dirty, you can just detach the whole module and wash the glove normally.
+The wrist housing was designed in Fusion 360 to keep the pcb safe. 
 
 ### Get the CAD assembly [here](https://github.com/Adnanosman9/Smart-Gloves/blob/main/CAD%20for%20flex%20sensor/assembly.f3z)
 
@@ -57,9 +57,9 @@ The wrist housing was designed in Fusion 360 to keep a low profile on your arm. 
 
 ---
 
-## Alternative 3D-Printed Flex Sensors
+## Alternative of commercial Sensors
 
-If you don't want to buy off-the-shelf commercial flex sensors, you can actually print your own using conductive filament. If you go this route, use these separate finger files:
+Here is an alter for commercial sensors for cost optimization. 
 
 *   [Middle, Index, & Ring fingers](https://github.com/Adnanosman9/Smart-Gloves/blob/main/CAD_3d%20printed%20sensor/Mid%20fingers-TPU.f3z)
 *   [Pinky & Thumb fingers](https://github.com/Adnanosman9/Smart-Gloves/blob/main/CAD_3d%20printed%20sensor/Pinky_Thumb_finger--TPU.f3z)
@@ -68,7 +68,7 @@ If you don't want to buy off-the-shelf commercial flex sensors, you can actually
 
 ---
 
-## ⚠️ Firmware Status
+## Firmware Status
 
 **Just a quick heads up:** I haven't been able to run this code on physical hardware yet. It's highly likely there are some I2C pin configuration mismatches, flipped GPIO definitions, or sensor initialization bugs waiting to happen on the first boot. Please double-check your schematic assignments against your software configuration before flashing! 
 
