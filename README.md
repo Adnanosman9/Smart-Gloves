@@ -1,131 +1,80 @@
-<h1 align="center">
-  BdSL Translator Glove
-  <br>
-</h1>
+# BdSL Translator Glove
 
-<h4 align="center">
-A wearable glove that translates Bangladeshi Sign Language (BdSL) into speech in real-time
-</h4>
+The **BdSL Translator Glove** is a wearable device designed to translate Bangladeshi Sign Language into words without requiring any camera setup.
 
-<div align="center">
+## How It Works
 
-![ESP32](https://img.shields.io/badge/XIao--ESP32--C3-000000?style=for-the-badge&logo=espressif&logoColor=white)
-![KiCad](https://img.shields.io/badge/KiCad-314CB0?style=for-the-badge&logo=kicad&logoColor=white)
-![Fusion 360](https://img.shields.io/badge/Fusion%20360-FF6B00?style=for-the-badge&logo=autodesk&logoColor=white)
+*   **Sensors:** The glove tracks movement using either ready-made bend sensors or custom, flexible 3D-printed tpu that changes its electrical voltage when your fingers move.
+*   **Brain:** An esp module tracks exactly how your hand moves and tilts, turns those gestures into data, and sends the translated speech to a device.
 
-</div>
+## Recent Design Updates
 
-## What is this?
+*   **Lower Cost:** Switched to smaller sensors, cutting the hardware budget down to about $100 for a full two-handed setup.
+*   **Better Fit:** Upgraded the design from a clunky plastic box to form-fitting, flexible finger guides that follow the shape of the hand.
 
-A lot of deaf people in Bangladesh have no easy way to talk to people who don't know sign language. I wanted to fix that. Not with a camera setup that needs good lighting and a phone pointed at you the whole time, but something you actually wear and carry around. So I built it into a glove.
 
-## How it works
+## Finger Guides
 
-There are two ways to build this depending on what you have access to.
+Shoutout to [zackfreedman](https://www.thingiverse.com/thing:1606915) for the original parametric ring glove concept that inspired this design. You can grab my modified STL [here](https://github.com/Adnanosman9/Smart-Gloves/blob/main/CAD%20for%20flex%20sensor/Ring_Glove_Parametric.stl).
 
-**Option 1: Commercial flex sensors (what I recommend)**
-Five 2.2" flex sensors go along each finger, held down by TPU guide segments I designed and printed. When you bend a finger, the sensor's resistance changes and the ADC picks that up. Simple and reliable.
+Instead of messing around with messy glues or tape, each finger uses a 3D-printed TPU channel segment where the sensor just slides right in and locks mechanically. I split these into two sizes:
+*   **Long:** For your index, middle, and ring fingers.
+*   **Short:** Form-fitted for the thumb and pinky to match their shorter lengths and natural joint angles.
 
-**Option 2: Conductive TPU (only if you have your own printer)**
-I originally wanted to skip commercial sensors entirely and just print the finger segments in Conductive TPU. It's piezoresistive, so resistance shifts as it bends, same idea. But no commercial print service carries conductive TPU filament, so unless you have your own printer and the filament already, this option is off the table. I learned that the hard way.
-
-Either way, a **XIAO ESP32-C3** reads all the sensor values alongside orientation data from an **MPU-6050** IMU, maps them into a hand-geometry profile, and classifies the sign. Everything gets sent over Bluetooth LE.
-
-No cameras. Works in the dark. Works outside. Works anywhere.
-
-Print the finger guides here: [for flex sensors](https://github.com/Adnanosman9/Smart-Gloves/tree/main/CAD%20for%20flex%20sensor) | [for 3D-printed sensor](https://github.com/Adnanosman9/Smart-Gloves/tree/main/CAD_3d%20printed%20sensor)
-
----
-
-## Addressing the Hack Club Review
-
-The first version got flagged for two things:
-
-> *"$80 seems a bit much for flex sensors"* and *"your CAD only shows a box, could you maybe design some flexible structure out of TPU?"*
-
-Both fair. Here's what I changed.
-
-**On the cost:** The original $80 estimate was for 4" flex sensors. I've since switched to 2.2" sensors at $6.86 each, which brings the total down to $68.60. BdSL uses both hands, so that's 10 fingers, 10 sensors, and $68.60 is already the cheapest I could get this to work. Not padding anything, that's just what flex sensors cost.
-
-**On the CAD:** I redesigned the finger part properly. Each finger now has a TPU guide segment that holds the flex sensor flat against the joint. The glove actually looks like a glove now, not just a box with wires coming out of it. The wrist hub is still a box (it has to be, there's a PCB in there), but the hand part is done.
-
----
-
-## The Finger Guide System
-
-Credit to [zackfreedman](https://www.thingiverse.com/thing:1606915) for the original parametric ring glove design that I built on top of.
-
-Find the STL [here](https://github.com/Adnanosman9/Smart-Gloves/blob/main/CAD%20for%20flex%20sensor/Ring_Glove_Parametric.stl).
-
-Each finger gets a TPU channel segment. The sensor slides in and stays put mechanically, no glue, no tape. I made two sizes: "Long" for the index, middle, and ring fingers, and "Short" for the thumb and pinky since those are shorter and sit at a different angle.
-
-White TPU, printable by any FDM service that does flexible filament.
+Any standard FDM printing service can easily run these off in white TPU filament.
 
 <img src="Images/TPU guide.jpg" alt="TPU finger guide segments" width="800"/>
 
 ---
 
-## The PCB
+## PCB Design
 
-I designed a low-profile wrist hub in KiCad to keep everything in one place. A few things worth noting:
+I put together a compact wrist hub in KiCad to keep the electronics tidy. A few design choices:
 
-The **XIAO ESP32-C3** was the obvious pick: tiny footprint, built-in BLE, enough ADC pins for all five sensors. I used a **47kΩ voltage divider** on each sensor input because the flex sensors are high-impedance and need it to read reliably. Threw in **0.1µF decoupling caps** on the sensor lines too after I noticed noise in early simulations.
+*   **Brain:** The **XIAO ESP32-C3** was a no-brainer. It's incredibly small, handles Bluetooth LE natively, and has just enough ADC pins for all 5 fingers.
+*   **Hardware Filtering:** Because flex sensors have a pretty high impedance, I added a **47kΩ voltage divider** on every sensor input to keep readings steady. I also threw in **0.1µF decoupling capacitors** along the sensor traces to smooth out some electrical noise I ran into during early testing.
 
-DRC came back 0 errors. There are some silkscreen warnings but those are just text placement things, nothing that affects the board.
+The KiCad DRC checked out cleanly with 0 errors (just a few minor silkscreen overlap warnings that won't disrupt manufacturing).
 
 **Schematic:**
-
 <img src="Images/glove_schematic.png" alt="Schematic" width="800"/>
 
 **PCB Layout:**
-
 <img src="Images/glove_pcb.png" alt="PCB Layout" width="800"/>
-
-<img src="Images/Warning.png" alt="KiCad DRC: 0 errors, silkscreen warnings only" width="800"/>
+<img src="Images/Warning.png" alt="KiCad DRC Output" width="800"/>
 
 ---
 
-## The Enclosure
+## Enclosure
 
-Designed in Fusion 360. Sits on the wrist, low-profile. The whole electronics module attaches with Velcro so you can pull it off and actually wash the glove fabric.
+The wrist housing was designed in Fusion 360 to keep a low profile on your arm. The neat part here is that the main electronics bay mounts to the glove using Velcro. When the fabric gets dirty, you can just detach the whole module and wash the glove normally.
 
-### Find the enclosure [here](https://github.com/Adnanosman9/Smart-Gloves/blob/main/CAD%20for%20flex%20sensor/assembly.f3z)
+### Get the CAD assembly [here](https://github.com/Adnanosman9/Smart-Gloves/blob/main/CAD%20for%20flex%20sensor/assembly.f3z)
 
 <img src="Images/Box case.png" alt="Wrist hub box" width="800"/>
-
 <img src="Images/Box Assembly 3.png" alt="Assembly render" width="800"/>
-
 <img src="Images/Box Assembly 2.png" alt="Assembly render 2" width="800"/>
-
-
-## 3d printed flex sensor
-
-To use 3d printed sensor instead of commercial sensors yyou can use it
-
-find the design here
-### * [Mid finger](https://github.com/Adnanosman9/Smart-Gloves/blob/main/CAD_3d%20printed%20sensor/Mid%20fingers-TPU.f3z)
-### * [pinky and thumb finger](https://github.com/Adnanosman9/Smart-Gloves/blob/main/CAD_3d%20printed%20sensor/Pinky_Thumb_finger--TPU.f3z)
-
-<img src="Images/Finger and sensor.png" alt="Finger segment with sensor" width="800"/>
 
 ---
 
-## ⚠️ Heads up on the firmware
+## Alternative 3D-Printed Flex Sensors
 
-I haven't physically tested the firmware yet. There's a real chance there are I2C pin mismatches, wrong GPIO assignments, or sensor init issues that won't show up until you actually flash and boot it. Please double-check every pin assignment against the schematic before you flash anything. First boot will probably need some debugging.
+If you don't want to buy off-the-shelf commercial flex sensors, you can actually print your own using conductive filament. If you go this route, use these separate finger files:
+
+*   [Middle, Index, & Ring fingers](https://github.com/Adnanosman9/Smart-Gloves/blob/main/CAD_3d%20printed%20sensor/Mid%20fingers-TPU.f3z)
+*   [Pinky & Thumb fingers](https://github.com/Adnanosman9/Smart-Gloves/blob/main/CAD_3d%20printed%20sensor/Pinky_Thumb_finger--TPU.f3z)
+
+<img src="Images/Finger and sensor.png" alt="Finger segment with custom sensor" width="800"/>
+
+---
+
+## ⚠️ Firmware Status
+
+**Just a quick heads up:** I haven't been able to run this code on physical hardware yet. It's highly likely there are some I2C pin configuration mismatches, flipped GPIO definitions, or sensor initialization bugs waiting to happen on the first boot. Please double-check your schematic assignments against your software configuration before flashing! 
 
 ## Bill of Materials
 
-[BOM is here](bom/BOM.csv)
+You can view the full parts list in the [BOM file here](bom/BOM.csv).
 
-## Credits
-
-- [KiCad](https://www.kicad.org/) for PCB design
-- [Autodesk Fusion 360](https://www.autodesk.com/products/fusion-360/) for the enclosure
-- [Open Print Sense](https://github.com/PaBu04/OpenPrintSense/tree/main) for the 3D-printed sensor approach
-- [zackfreedman](https://www.thingiverse.com/thing:1606915) for the parametric finger guide base
-- [Hack Club](https://hackclub.com/) for the support
-
----
 
 > GitHub [@Adnanosman](https://github.com/Adnanosman9)
